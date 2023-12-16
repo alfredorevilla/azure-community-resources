@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "microsoft-entra-id-openid-connect-authentication-i", "microsoft-entra-id-openid-connect-authentication-i.csproj", "{7C74C0F2-C927-43A4-BADB-B4DEB24B0C97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C74C0F2-C927-43A4-BADB-B4DEB24B0C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C74C0F2-C927-43A4-BADB-B4DEB24B0C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C74C0F2-C927-43A4-BADB-B4DEB24B0C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C74C0F2-C927-43A4-BADB-B4DEB24B0C97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6518AE89-77A8-4CDD-9652-09A428761738}
+	EndGlobalSection
+EndGlobal
