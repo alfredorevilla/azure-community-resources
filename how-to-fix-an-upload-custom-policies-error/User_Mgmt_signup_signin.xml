@@ -1,0 +1,36 @@
+<TrustFrameworkPolicy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06" PolicySchemaVersion="0.3.0.0" TenantId="sgscophoton.onmicrosoft.com" PolicyId="B2C_1A_User_Mgmt_signup_signin" PublicPolicyUri="http://sgscophoton.onmicrosoft.com/B2C_1A_User_Mgmt_signup_signin" TenantObjectId="55585cc8-a22e-4b2d-a859-26d84e110f59">
+  <BasePolicy>
+    <TenantId>sgscophoton.onmicrosoft.com</TenantId>
+    <PolicyId>B2C_1A_User_Mgmt_TrustFrameworkExtensions</PolicyId>
+  </BasePolicy>
+  <RelyingParty>
+    <!-- <DefaultUserJourney ReferenceId="SignUpOrSignIn" /> -->
+    <DefaultUserJourney ReferenceId="CustomSignUpSignIn" />
+    <Endpoints>
+      <!--points
+      to refresh token journey when app makes refresh token request-->
+      <Endpoint Id="Token" UserJourneyReferenceId="RedeemRefreshToken" />
+    </Endpoints>
+    <UserJourneyBehaviors>
+      <SingleSignOn Scope="Application" />
+      <SessionExpiryType>Absolute</SessionExpiryType>
+      <SessionExpiryInSeconds>86400</SessionExpiryInSeconds>
+    </UserJourneyBehaviors>
+    <TechnicalProfile Id="PolicyProfile">
+      <DisplayName>PolicyProfile</DisplayName>
+      <Protocol Name="OpenIdConnect" />
+      <OutputClaims>
+        <OutputClaim ClaimTypeReferenceId="displayName" />
+        <OutputClaim ClaimTypeReferenceId="givenName" />
+        <OutputClaim ClaimTypeReferenceId="surname" />
+        <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="sub" />
+        <OutputClaim ClaimTypeReferenceId="identityProvider" />
+        <OutputClaim ClaimTypeReferenceId="tenantId" AlwaysUseDefaultValue="true" DefaultValue="{Policy:TenantObjectId}" />
+        <OutputClaim ClaimTypeReferenceId="identityProviderAccessToken" PartnerClaimType="idp_access_token" />
+        <OutputClaim ClaimTypeReferenceId="email" />
+        <OutputClaim ClaimTypeReferenceId="isForgotPassword" DefaultValue="false" />
+      </OutputClaims>
+      <SubjectNamingInfo ClaimType="sub" />
+    </TechnicalProfile>
+  </RelyingParty>
+</TrustFrameworkPolicy>

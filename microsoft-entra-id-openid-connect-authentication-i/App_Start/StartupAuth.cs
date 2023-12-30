@@ -27,6 +27,7 @@ namespace microsoft_entra_id_openid_connect_authentication_i
             app.UseOpenIdConnectAuthentication(
                 new OpenIdConnectAuthenticationOptions
                 {
+                    CookieManager = new Microsoft.Owin.Host.SystemWeb.SystemWebCookieManager(),
                     ClientId = clientId,
                     Authority = authority,
                     PostLogoutRedirectUri = postLogoutRedirectUri,
